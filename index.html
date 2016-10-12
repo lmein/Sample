@@ -24,13 +24,83 @@
 	
   </head>
   <body>
-    <section class="page-header">
+	<!-- Navbar place holder -->
+	<div id="gpsnavbar"></div>
+	
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header">
+                            Main Page
+                        </h3>
+                        <!-- Breadcrumbs -->
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="default.html">Main</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Start of content section -->
+                <h4>
+                    Vision
+                </h4>
+                <ol>
+                    <li>User Experience
+                        <ul>
+                            <li>Follow the leaders (Google, Twitter, etc.) - reduced training, more intuitive, less resource intensive</li>
+                            <li>End user UI management</li>
+                            <li>Guide the user through the processing</li>
+                            <li>Tell the user not only that there is an error, but why and if possible, how to fix</li>
+                        </ul>
+                    </li>
+                    <li>Architecture
+                        <ul>
+                            <li>Built to a standard - not a browser</li>
+                            <li>Responsive layout - not based on a screen size</li>
+	                        <li>No "business logic" in presentation layer</li>
+                            <li>No batch reporting</li>
+                            <li>Decouple as much as possible from server HW/SW changes</li>
+                            <li>Lighten load on network</li>
+                        </ul>
+                    </li>
+                    <li>Development
+                        <ul>
+                            <li>Short learning curve for 80% - 90% of presentation layer work</li>	                
+        	                <li>Use off the shelf .js libraries</li>
+    	                    <li>Use off the shelf .css libraries</li>
+                            <li>Modular components where possible</li>
+                            <li>Use page templates so focus can be on business layer and UI components directly tied to that data</li>
+                            <li>As there is one source of truth for data, code will only be written once</li>
+                            <li>This becomes the "how to" source</li>
+                        </ul>
+                    </li>
+                    <li>Accept that we will struggle at first because this is so different than our typical web development</li>
+                </ol>
+                <!-- End of content section -->
+
+                <!-- Return to the top of the page button -->
+                <button type="button" class="btn btn-default cd-top" id="ButtonT">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </button>
+
+            <!-- /.container-fluid -->
+            </div>
+
+        <!-- /#page-wrapper -->
+        </div>
+	
+    <!--<section class="page-header">
       <h1 class="project-name">Sample</h1>
       <h2 class="project-tagline">HTML Build Sample</h2>
       <a href="https://github.com/lmein/Sample" class="btn">View on GitHub</a>
       <a href="https://github.com/lmein/Sample/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/lmein/Sample/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    </section>-->
 
     <section class="main-content">
       <h3>
