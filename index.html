@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
-
 	<!--Sets the content display area based on the device displaying it and without zoom-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,86 +11,411 @@
     <link href="css/bootstrap-3.3.7/bootstrap.min.css" rel="stylesheet" />	
 	
 	<!-- Page specific CSS below here -->
+    <link href="css/jqueryui-1.11.3/jquery-ui.css" rel="stylesheet" />
+
+    <link href="css/simplesidebar-1.0.0/simple-sidebar.css" rel="stylesheet" />
 
 	<!-- History of change goes here -->
 
 	
   </head>
-  <body>
-	<!-- Navbar place holder -->
-	<div id="gpsnavbar"></div>
-	
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="page-header">
-                            Main Page
-                        </h3>
-                        <!-- Breadcrumbs -->
-                        <ol class="breadcrumb">
-                            <li>
-                                <a href="default.html">Main</a>
+    <body>
+        <div id="wrapper" class="toggled">
+            <!-- This needs to be converted to a dynamically created navbar based on security -->
+            <!-- Should only load when the cog icon is clicked -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav list-unstyled ">
+                    <li class="dropdown">
+                        <a href="#">Finishing Applications</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">MES Applications</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Order Entry Applications<b class="caret"></b></a>
+                        <!-- The "connectedLists is important because it ties the list items under the ul to other ul/ol areas on the page so drag and drop can happen between them. -->
+                        <ul class="dropdown-menu sortable-list list-unstyled connectedLists">
+                            <li draggable="true" class="list-group-item">
+                                <a class="btn btn-primary" href="http://mes.uss.com/SingleSalesOrderReport.aspx">Single Sales Order Report</a>
                             </li>
-                        </ol>
-                    </div>
-                </div>
-
-                <!-- Start of content section -->
-                <h4>
-                    Vision
-                </h4>
-                <ol>
-                    <li>User Experience
-                        <ul>
-                            <li>Follow the leaders (Google, Twitter, etc.) - reduced training, more intuitive, less resource intensive</li>
-                            <li>End user UI management</li>
-                            <li>Guide the user through the processing</li>
-                            <li>Tell the user not only that there is an error, but why and if possible, how to fix</li>
                         </ul>
                     </li>
-                    <li>Architecture
-                        <ul>
-                            <li>Built to a standard - not a browser</li>
-                            <li>Responsive layout - not based on a screen size</li>
-	                        <li>No "business logic" in presentation layer</li>
-                            <li>No batch reporting</li>
-                            <li>Decouple as much as possible from server HW/SW changes</li>
-                            <li>Lighten load on network</li>
-                        </ul>
+                    <!--  This version pushes the menu content down but is jerky in rendering
+                    <li>
+                       <a href="javascript:;" data-toggle="collapse" data-target="#oeul1"><i class="fa fa-fw fa-arrows-v"></i>Order Entry Applications<i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="oeul1" class="collapse connectedLists list-unstyled connectedLists sortable-list">
+                                <li draggable="true">
+                                    <a class="btn btn-primary" href="http://mes.uss.com/SingleSalesOrderReport.aspx">Single Sales Order Report</a>
+                                </li> 
+                                <li>
+                                    <a href="#">Application B</a>
+                                </li>
+                            </ul>
+                    </li> -->
+                    <li>
+                        <a href="#">Primary Applications</a>
                     </li>
-                    <li>Development
-                        <ul>
-                            <li>Short learning curve for 80% - 90% of presentation layer work</li>	                
-        	                <li>Use off the shelf .js libraries</li>
-    	                    <li>Use off the shelf .css libraries</li>
-                            <li>Modular components where possible</li>
-                            <li>Use page templates so focus can be on business layer and UI components directly tied to that data</li>
-                            <li>As there is one source of truth for data, code will only be written once</li>
-                            <li>This becomes the "how to" source</li>
-                        </ul>
+                    <li>
+                        <a href="#">Plant Intelligence Applications</a>
                     </li>
-                    <li>Accept that we will struggle at first because this is so different than our typical web development</li>
-                </ol>
-                <!-- End of content section -->
-
-                <!-- Return to the top of the page button -->
-                <button type="button" class="btn btn-default cd-top" id="ButtonT">
-                    <span class="glyphicon glyphicon-chevron-up"></span>
-                </button>
-
-            <!-- /.container-fluid -->
+                    <li>
+                        <a href="#">Quality Applications</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>Test Tracking Applications<i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="demo" class="collapse connectedLists">
+                                <li draggable="true">
+                                    <a href="#">Application A</a>
+                                </li> 
+                                <li>
+                                    <a href="#">Application B</a>
+                                </li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="#">Other Applications</a>
+                    </li>
+                    <li class="hidden-sm hidden-md hidden-lg">
+                        <button type="button" class="btn btn-default" id="menu-toggle2">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </button>
+                    </li>
+                </ul>
             </div>
 
-        <!-- /#page-wrapper -->
+            <!--<div id="page-wrapper" style="background-color: #E6DADF">-->
+            <div id="page-wrapper">
+            <!-- Navbar place holder -->
+            <!-- HTML will render the file loaded by the javascript at the bottom at this place holder location. -->
+            <div id="gpsnavbar"></div>
+
+                <div class="container-fluid">
+
+                    <!-- Breadcrumb section -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="page-header">
+                                Dashboard
+                                <button type="button" class="btn btn-default" id="menu-toggle">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                </button>
+                            </h3>
+                             <ol class="breadcrumb">
+                                <li>
+                                    <i class="fa fa-dashboard"></i>
+                                    <a href="default.html">Main</a>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-desktop"></i>Dashboard
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- Design note section -->
+                    <div>
+                        <h4>Dashboard Screen</h4>
+                    </div>
+                    <ol>
+                        <li>User role determines initial setup</li>
+                        <li>User can add/remove panels based on particular needs</li>
+                        <li>User can add/remove panel content based on particular needs</li>
+                        <li>User can rearrange panels based on need</li>
+                        <li>Security for panel content controlled by end user management, end user management security controlled by SRS</li>
+                        <li>Configuration stored on DB so dashboard is the same for person on any device</li>
+                    </ol>
+                    <!-- Start of content section -->
+                    <!-- Items to work on:
+                         1.  Storing the state of the panels based on end user (which panels and the order)
+                         2.  Determining which panels to use from a panel "picker"
+                         3.  Dynamic panel content  
+                        
+                        A. Panel ID 
+                        B. Panel Type (warning, info, etc.)
+                        C. Column #
+                        D. Order in column
+                        E. Collapsed or not
+
+                        A. Panel ID
+                        B. Panel Content (link, etc.)
+
+                        A. User ID
+                        B. Config - Y/N - user can configure their own page
+                        C. Role ID - default role
+
+                        A. User ID
+                        B. Panel ID
+
+                        A. Role ID
+                        B. Role Description
+                        
+                        -->
+
+                    <div class="container-fluid">
+
+
+                        <div class="row">
+                        <div id="oedashboard">
+
+                            <!-- The following gets converted to javascript -->
+
+                            <div class="col-md-4 left first">
+                                <ul class="sortable-list list-unstyled">
+                                    <li class="sortable-item">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <!--<h3 class="panel-title">Primary Applications</h3>-->
+                                                <h3 class="panel-title">
+                                                    <!-- the following turns the panel header into a link to cause the body section defined by "collapse1" to collapse when clicked -->
+                                                    <a data-toggle="collapse" data-target="#collapse1" href="#collapse1">
+                                                        Primary Applications
+                                                    </a><!--<i class="icon-white"></i>-->
+                                                </h3>
+                                            </div>
+                                            <!-- The following defines the collapsable area and the identifier -->
+                                            <div id="collapse1" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    List of links to main user interfaces for position:
+                                                    <ul id="list1" class="sortable-list list-unstyled connectedLists">
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/OrderSearch.aspx">Order Search</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=OrderUI">Order UI</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=CustUI">Customer UI</a>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sortable-item">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <a data-toggle="collapse" data-target="#collapse2" href="#collapse2">
+                                                        Secondary Applications
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse2" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    List of links to secondary user interfaces for position:
+                                                    <ol class="sortable-list list-unstyled connectedLists">
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDThreeFrameShell.aspx?App=Bulletins">Bulletins</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=CPAR">CPAR</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=PC">Process Change</a>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a class="btn btn-primary" href="http://planthomepage.uss.com/">Plant Home Page</a>
+                                                        </li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 left">
+                                <ul class="sortable-list list-unstyled">
+                                    <li class="sortable-item">
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <a data-toggle="collapse" data-target="#collapse3" href="#collapse3">
+                                                        Completed
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse3" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <ol class="sortable-list list-unstyled connectedLists">
+                                                        <li class="list-group-item"><span class="badge">21</span><a class="btn btn-success" href="report.html">Completed Item List</a></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sortable-item">
+                                         <div class="panel panel-info">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <a data-toggle="collapse" data-target="#collapse4" href="#collapse4">
+                                                       For Your Information
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse4" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <ol class="sortable-list list-unstyled connectedLists">
+                                                        <li class="list-group-item"><span class="badge">7</span><a class="btn btn-info" href="report.html">For your awareness</a></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 left">
+                                <ul class="sortable-list list-unstyled">
+                                    <li class="sortable-item">
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <a data-toggle="collapse" data-target="#collapse5" href="#collapse5">
+                                                       Needs Attention
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse5" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <ol class="sortable-list list-unstyled connectedLists">
+                                                        <li class="list-group-item"><span class="badge">3</span><a class="btn btn-warning" href="report.html">Items coming due</a></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sortable-item">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <a data-toggle="collapse" data-target="#collapse6" href="#collapse6">
+                                                       Needs Addressed
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                            <div id="collapse6" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <ol class="sortable-list list-unstyled connectedLists">
+                                                        <li class="list-group-item"><span class="badge">5</span><a class="btn btn-danger" href="report.html">Items in error</a></li>
+                                                        <li class="list-group-item"><span class="badge">12</span><a class="btn btn-danger" href="report.html">Items over due</a></li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clearer">
+                                &nbsp;
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- End of content section -->
+
+                <!-- /.container-fluid -->
+                </div>
+
+            <!-- /#page-wrapper -->
+            </div>
+
         </div>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap-3.3.7/bootstrap.min.js"></script>
+        <!-- HTML will render the file loaded by the javascript at the bottom at this place holder location. -->
+        <!-- Copyright place holder -->
+        <div id="copyright"></div>
 
-        <!-- Page Specific JavaScript below here -->
-  
-  </body>
+        <!-- javascripts loaded last to prevent the slowdown of page rendering -->
+        <!-- jQuery -->
+        <script src="js/jquery-2.1.3/jquery-2.1.3.min.js"></script>
+
+        <!--Navbar load -->
+        <!--This modularizes the navbar so it only has to be changed in one location -->
+        <script type="text/javascript">
+            $("#gpsnavbar").load("includes/navbar.html");
+        </script>
+
+        <!--Copyright load -->
+        <!--This modularizes the copyright statement so it only has to be changed in one location -->
+        <script type="text/javascript">
+            $("#copyright").load("includes/copyright.html");
+        </script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap-3.3.2/bootstrap.min.js"></script>
+        
+        <!-- JQuery UI JavaScript -->
+        <script src="js/jqueryui-1.11.3/jquery-ui.min.js"></script>
+        <!--<script src="js/bootsidemenu-1.0.0/BootSideMenu.js"></script>-->
+
+        <!-- Custom JavaScript -->
+        <!-- convert to .js file? -->
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                // This makes the dashboard area sortable and provides the visual que (dotted line box) for panel placement
+                $('#oedashboard .sortable-list').sortable({
+                    connectWith: '#oedashboard .sortable-list',
+                    placeholder: 'placeholder',
+                });
+
+                // This does the same as the above but for the sidebar so items can be moved back to it and the visual que shows up
+                $('#sidebar-wrapper .sortable-list').sortable({
+                    connectWith: '#sidebar-wrapper .sortable-list',
+                    placeholder: 'placeholder',
+                });
+            });
+
+            /*$(document).ready(function () {
+                $('div#wrapper').find('ul.sortable').sortable({
+                    connectWith: 'ul.sortable'
+                });
+            }); */
+
+            /* the following three blocks of javascript control the movement of items between list blocks */
+            $(document).ready(function () {
+                $('.sidebar-nav').css('overflow-y');
+                jQuery(function (event, ui) {
+                    $('.connectedLists').sortable({
+                        connectWith: ".connectedLists",
+                        stop: function (event, ui) {
+                            item = ui.item;
+                            var newList = item.closest("ul");
+                            var group = newList.attr('id');
+                            var formField = item.find("input");
+                            formField.val(group);
+                        },
+                        appendTo: 'body',
+                        helper: function (e, elt) {
+                            $(elt).css('list-style-type', 'none');
+                            return elt.clone(true);
+                        }
+                    });
+                });
+            });
+
+            $('.unsortedList li.panel').mousedown(function () {
+                $('.sidebar-nav').css('overflow-y', '');
+            });
+
+
+            $('.unsortedList li.panel').mouseup(function () {
+                $('.sidebar-nav').css('overflow-y', 'scroll');
+            });
+
+        </script>
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+            });
+            /* This one is used by the side menu - when on small displays*/
+            $("#menu-toggle2").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </body>
+
 </html>
