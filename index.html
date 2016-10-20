@@ -11,7 +11,7 @@
     <link href="css/bootstrap-3.3.7/bootstrap.min.css" rel="stylesheet" />	
 	
 	<!-- Page specific CSS below here -->
-    <link href="css/jqueryui-1.11.3/jquery-ui.css" rel="stylesheet" />
+    <link href="css/jqueryui-1.21.1/jquery-ui.css" rel="stylesheet" />
 
     <link href="css/simplesidebar-1.0.0/simple-sidebar.css" rel="stylesheet" />
 
@@ -26,10 +26,10 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav list-unstyled ">
                     <li class="dropdown">
-                        <a href="#">Finishing Applications</a>
+                        <a href="#">Application Group 1</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#">MES Applications</a>
+                        <a href="#">Application Group 2</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Order Entry Applications<b class="caret"></b></a>
@@ -53,13 +53,13 @@
                             </ul>
                     </li> -->
                     <li>
-                        <a href="#">Primary Applications</a>
+                        <a href="#">Application Group 3</a>
                     </li>
                     <li>
-                        <a href="#">Plant Intelligence Applications</a>
+                        <a href="#">Application Group 4</a>
                     </li>
                     <li>
-                        <a href="#">Quality Applications</a>
+                        <a href="#">Application Group 5</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>Test Tracking Applications<i class="fa fa-fw fa-caret-down"></i></a>
@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h3 class="page-header">
-                                Dashboard
+                                Sample
                                 <button type="button" class="btn btn-default" id="menu-toggle">
                                     <span class="glyphicon glyphicon-cog"></span>
                                 </button>
@@ -106,55 +106,21 @@
                                     <a href="default.html">Main</a>
                                 </li>
                                 <li class="active">
-                                    <i class="fa fa-desktop"></i>Dashboard
+                                    <i class="fa fa-desktop"></i>Sample
                                 </li>
                             </ol>
                         </div>
                     </div>
                     <!-- Design note section -->
                     <div>
-                        <h4>Dashboard Screen</h4>
+                        <h4>Sample</h4>
                     </div>
-                    <ol>
-                        <li>User role determines initial setup</li>
-                        <li>User can add/remove panels based on particular needs</li>
-                        <li>User can add/remove panel content based on particular needs</li>
-                        <li>User can rearrange panels based on need</li>
-                        <li>Security for panel content controlled by end user management, end user management security controlled by SRS</li>
-                        <li>Configuration stored on DB so dashboard is the same for person on any device</li>
-                    </ol>
-                    <!-- Start of content section -->
-                    <!-- Items to work on:
-                         1.  Storing the state of the panels based on end user (which panels and the order)
-                         2.  Determining which panels to use from a panel "picker"
-                         3.  Dynamic panel content  
-                        
-                        A. Panel ID 
-                        B. Panel Type (warning, info, etc.)
-                        C. Column #
-                        D. Order in column
-                        E. Collapsed or not
-
-                        A. Panel ID
-                        B. Panel Content (link, etc.)
-
-                        A. User ID
-                        B. Config - Y/N - user can configure their own page
-                        C. Role ID - default role
-
-                        A. User ID
-                        B. Panel ID
-
-                        A. Role ID
-                        B. Role Description
-                        
-                        -->
 
                     <div class="container-fluid">
 
 
                         <div class="row">
-                        <div id="oedashboard">
+                        <div id="dashboard">
 
                             <!-- The following gets converted to javascript -->
 
@@ -177,13 +143,13 @@
                                                     List of links to main user interfaces for position:
                                                     <ul id="list1" class="sortable-list list-unstyled connectedLists">
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://mes.uss.com/OrderSearch.aspx">Order Search</a>
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/OrderSearch.aspx">App 1</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=OrderUI">Order UI</a>
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=OrderUI">App 2</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=CustUI">Customer UI</a>
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=CustUI">App 3</a>
                                                         </li>
                                                     </ul>
                                                     
@@ -205,16 +171,16 @@
                                                     List of links to secondary user interfaces for position:
                                                     <ol class="sortable-list list-unstyled connectedLists">
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDThreeFrameShell.aspx?App=Bulletins">Bulletins</a>
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDThreeFrameShell.aspx?App=Bulletins">App A</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=CPAR">CPAR</a>
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=CPAR">App B</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=PC">Process Change</a>
+                                                            <a class="btn btn-primary" href="http://mes.uss.com/CDTwoFrameShell.aspx?App=PC">App C</a>
                                                         </li>
                                                         <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="http://planthomepage.uss.com/">Plant Home Page</a>
+                                                            <a class="btn btn-primary" href="http://planthomepage.uss.com/">App D</a>
                                                         </li>
                                                     </ol>
                                                 </div>
@@ -326,7 +292,7 @@
 
         <!-- javascripts loaded last to prevent the slowdown of page rendering -->
         <!-- jQuery -->
-        <script src="js/jquery-2.1.3/jquery-2.1.3.min.js"></script>
+        <script src="js/jquery-3.1.1/jquery-3.1.1.min.js"></script>
 
         <!--Navbar load -->
         <!--This modularizes the navbar so it only has to be changed in one location -->
@@ -341,10 +307,10 @@
         </script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap-3.3.2/bootstrap.min.js"></script>
+        <script src="js/bootstrap-3.3.7/bootstrap.min.js"></script>
         
         <!-- JQuery UI JavaScript -->
-        <script src="js/jqueryui-1.11.3/jquery-ui.min.js"></script>
+        <script src="js/jqueryui-1.12.1/jquery-ui.min.js"></script>
         <!--<script src="js/bootsidemenu-1.0.0/BootSideMenu.js"></script>-->
 
         <!-- Custom JavaScript -->
