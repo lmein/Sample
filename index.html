@@ -86,7 +86,7 @@
             <div id="page-wrapper">
             <!-- Navbar place holder -->
             <!-- HTML will render the file loaded by the javascript at the bottom at this place holder location. -->
-            <div id="gpsnavbar"></div>
+            <!--<div id="gpsnavbar"></div>-->
 
                 <div class="container-fluid">
 
@@ -116,166 +116,28 @@
                     </div>
 
                     <div class="container-fluid">
+						<div class='span4'>
+							<ol class='simple_with_animation vertical'>
+								<li>Item 1</li>
+								<li>Item 2</li>
+								<li>Item 3</li>
+								<li>Item 4</li>
+								<li>Item 5</li>
+								<li>Item 6</li>
+							</ol>
+						</div>
+						<div class='span4'>
+							<ol class='simple_with_animation vertical'>
+								<li class='highlight'>Item 1</li>
+								<li class='highlight'>Item 2</li>
+								<li class='highlight'>Item 3</li>
+								<li class='highlight'>Item 4</li>
+								<li class='highlight'>Item 5</li>
+								<li class='highlight'>Item 6</li>
+							</ol>
+						</div>
 
-
-                        <div class="row">
-                        <div id="dashboard">
-
-                            <!-- The following gets converted to javascript -->
-
-                            <div class="col-md-4 left first">
-                                <ul class="sortable-list list-unstyled">
-                                    <li class="sortable-item">
-                                        <div class="panel panel-primary">
-                                            <div class="panel-heading">
-                                                <!--<h3 class="panel-title">Primary Applications</h3>-->
-                                                <h3 class="panel-title">
-                                                    <!-- the following turns the panel header into a link to cause the body section defined by "collapse1" to collapse when clicked -->
-                                                    <a data-toggle="collapse" data-target="#collapse1" href="#collapse1">
-                                                        Primary Applications
-                                                    </a><!--<i class="icon-white"></i>-->
-                                                </h3>
-                                            </div>
-                                            <!-- The following defines the collapsable area and the identifier -->
-                                            <div id="collapse1" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-                                                    List of links to main user interfaces for position:
-                                                    <ul id="list1" class="sortable-list list-unstyled connectedLists">
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App 1</a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App 2</a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App 3</a>
-                                                        </li>
-                                                    </ul>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="sortable-item">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">
-                                                    <a data-toggle="collapse" data-target="#collapse2" href="#collapse2">
-                                                        Secondary Applications
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse2" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-                                                    List of links to secondary user interfaces for position:
-                                                    <ol class="sortable-list list-unstyled connectedLists">
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App A</a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App B</a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App C</a>
-                                                        </li>
-                                                        <li class="list-group-item">
-                                                            <a class="btn btn-primary" href="index.html">App D</a>
-                                                        </li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 left">
-                                <ul class="sortable-list list-unstyled">
-                                    <li class="sortable-item">
-                                        <div class="panel panel-success">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">
-                                                    <a data-toggle="collapse" data-target="#collapse3" href="#collapse3">
-                                                        Completed
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse3" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-                                                    <ol class="sortable-list list-unstyled connectedLists">
-                                                        <li class="list-group-item"><span class="badge">21</span><a class="btn btn-success" href="report.html">Completed Item List</a></li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="sortable-item">
-                                         <div class="panel panel-info">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">
-                                                    <a data-toggle="collapse" data-target="#collapse4" href="#collapse4">
-                                                       For Your Information
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse4" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-                                                    <ol class="sortable-list list-unstyled connectedLists">
-                                                        <li class="list-group-item"><span class="badge">7</span><a class="btn btn-info" href="report.html">For your awareness</a></li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 left">
-                                <ul class="sortable-list list-unstyled">
-                                    <li class="sortable-item">
-                                        <div class="panel panel-warning">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">
-                                                    <a data-toggle="collapse" data-target="#collapse5" href="#collapse5">
-                                                       Needs Attention
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse5" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-                                                    <ol class="sortable-list list-unstyled connectedLists">
-                                                        <li class="list-group-item"><span class="badge">3</span><a class="btn btn-warning" href="report.html">Items coming due</a></li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="sortable-item">
-                                        <div class="panel panel-danger">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">
-                                                    <a data-toggle="collapse" data-target="#collapse6" href="#collapse6">
-                                                       Needs Addressed
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                            <div id="collapse6" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-                                                    <ol class="sortable-list list-unstyled connectedLists">
-                                                        <li class="list-group-item"><span class="badge">5</span><a class="btn btn-danger" href="report.html">Items in error</a></li>
-                                                        <li class="list-group-item"><span class="badge">12</span><a class="btn btn-danger" href="report.html">Items over due</a></li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="clearer">
-                                &nbsp;
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- End of content section -->
+					</div>
 
                 <!-- /.container-fluid -->
                 </div>
@@ -295,9 +157,9 @@
 
         <!--Navbar load -->
         <!--This modularizes the navbar so it only has to be changed in one location -->
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             $("#gpsnavbar").load("includes/navbar.html");
-        </script>
+        </script>  -->
 
         <!--Copyright load -->
         <!--This modularizes the copyright statement so it only has to be changed in one location -->
@@ -315,7 +177,43 @@
         <!-- Custom JavaScript -->
         <!-- convert to .js file? -->
         <script type="text/javascript">
+			var adjustment;
+			
+			$("ol.simple_with_animation").sortable({
+				group: 'simple_with_animation',
+				pullPlaceholder: false,
+				// animation on drop
+				onDrop: function  ($item, container, _super) {
+					var $clonedItem = $('<li/>').css({height: 0});
+					$item.before($clonedItem);
+					$clonedItem.animate({'height': $item.height()});
 
+					$item.animate($clonedItem.position(), function  () {
+						$clonedItem.detach();
+						_super($item, container);
+					});
+				},
+
+				// set $item relative to cursor position
+				onDragStart: function ($item, container, _super) {
+					var offset = $item.offset(),
+						pointer = container.rootGroup.pointer;
+	
+					adjustment = {
+						left: pointer.left - offset.left,
+						top: pointer.top - offset.top
+					};
+
+					_super($item, container);
+				},
+				onDrag: function ($item, position) {
+					$item.css({
+						left: position.left - adjustment.left,
+						top: position.top - adjustment.top
+					});
+				}
+			});		
+		
             $(document).ready(function () {
 
                 // This makes the dashboard area sortable and provides the visual que (dotted line box) for panel placement
